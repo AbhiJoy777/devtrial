@@ -1,0 +1,108 @@
+/* Sidebar container */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100%;
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;
+    opacity: 0;
+}
+
+/* When open */
+.sidebar.open {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Profile */
+.sidebar-profile {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #162447;
+}
+.profile-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #2563eb;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: 15px;
+}
+.profile-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Nav */
+.sidebar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    flex-grow: 1;
+}
+.nav-item {
+    padding: 0 10px;
+}
+.nav-button {
+    width: 100%;
+    background: none;
+    border: none;
+    color: #e0e0e0;
+    padding: 15px;
+    text-align: left;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.2s, color 0.2s;
+}
+.nav-button:hover,
+.nav-button:focus {
+    background-color: #233554;
+    color: #ffffff;
+    outline: none;
+}
+
+/* Footer */
+.sidebar-footer {
+    padding: 20px;
+    border-top: 1px solid #162447;
+}
+.logout-button-sidebar {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: #d9534f;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+.logout-button-sidebar:hover {
+    background-color: #c9302c;
+}
+.logout-button-sidebar:active {
+    transform: scale(0.97);
+}
+
+/* Prevent accidental text selection */
+.nav-button,
+.logout-button-sidebar {
+    user-select: none;
+}

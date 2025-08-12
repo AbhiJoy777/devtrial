@@ -1,0 +1,237 @@
+/* --- DashboardPage.css --- */
+body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+}
+
+.dashboard-layout {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.main-header {
+    background-color: #fff;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 65px;
+    flex-shrink: 0;
+    z-index: 2;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+.menu-button {
+    background: none;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 8px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-right: 20px;
+    color: #333;
+}
+.header-title span {
+    font-weight: 700;
+    color: #2563eb;
+}
+
+/* Overlay when sidebar is open */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+/* Body split between video and code */
+.dashboard-body-correct {
+    flex-grow: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+/* Left video section */
+.video-area-fixed {
+    flex: 0 0 450px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border-right: 1px solid #e0e0e0;
+    background-color: #fff;
+    overflow-y: auto;
+}
+
+/* Right panel */
+.right-panel-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.right-panel-container.idle-view {
+    background-color: #f0f2f5;
+}
+.right-panel-container.active-view {
+    background-color: #0d1117;
+    color: #c9d1d9;
+}
+
+/* Idle screen content */
+.idle-content-wrapper {
+    padding: 30px;
+    color: #111;
+}
+.start-session-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-top: 30px;
+    border: 1px solid #e0e0e0;
+}
+.start-button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2563eb;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.start-button:hover {
+    transform: translateY(-2px);
+}
+
+/* Active panel */
+.question-panel {
+    padding: 20px;
+    border-bottom: 1px solid #30363d;
+    overflow-y: auto;
+    flex-shrink: 0;
+}
+.question-panel h2 {
+    color: #58a6ff;
+}
+.question-details {
+    margin-top: 15px;
+    display: flex;
+    gap: 20px;
+    font-size: 0.9rem;
+    color: #8b949e;
+}
+.editor-panel {
+    flex-grow: 1;
+    overflow: hidden;
+}
+.timer-panel {
+    padding: 15px 20px;
+    text-align: right;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-top: 1px solid #30363d;
+    flex-shrink: 0;
+}
+
+/* Video Styling */
+.video-container {
+    background: #fff;
+    padding: 20px;
+    flex: 1 1 0;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+}
+.video-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-shrink: 0;
+}
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    background-color: #000;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-grow: 1;
+}
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.video-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.control-icon {
+    font-size: 1.2rem;
+}
+
+.editor-wrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.editor-main-area {
+    flex-grow: 1;
+    overflow: hidden; /* This is where the main CodeMirror instance goes */
+}
+
+.editor-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    background-color: #1e1e1e;
+    border-top: 1px solid #30363d;
+    flex-shrink: 0;
+}
+
+.console-button, .run-button {
+    background-color: #333;
+    border: 1px solid #555;
+    color: #ccc;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.run-button {
+    background-color: #2563eb;
+    border-color: #2563eb;
+    color: white;
+    font-weight: bold;
+}
+
+.run-button:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+}

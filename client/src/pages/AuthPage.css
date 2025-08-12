@@ -1,0 +1,149 @@
+/* Main container for the two-column layout */
+.auth-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* --- Left Promotional Panel --- */
+.auth-left-panel {
+    flex: 1;
+    color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    text-align: center;
+    position: relative; /* Needed for the overlay */
+
+    /* --- ADD YOUR FIRST BACKGROUND IMAGE HERE --- */
+    background-image: url('/promo-bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Add a semi-transparent overlay to make text readable */
+.auth-left-panel::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 1;
+}
+
+/* Wrapper for the promo text to sit on top of the overlay */
+.promo-content-wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+.app-title-fancy {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.app-description-fancy {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 400px;
+}
+
+
+/* --- Right panel with the login form --- */
+.auth-right-panel {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    /* --- ADD YOUR SECOND BACKGROUND IMAGE HERE --- */
+    background-image: url('/form-bg.jpg'); 
+    background-size: cover;
+    background-position: center;
+}
+
+/* This overlay is unchanged from your original code */
+.auth-right-panel::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(4, 1, 1, 0.7);
+    
+}
+
+/* This form-wrapper is unchanged from your original code */
+.form-wrapper {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    z-index: 2; /* Increased z-index to be on top of the overlay */
+    text-align: center;
+}
+
+
+/* --- ALL YOUR ORIGINAL FORM STYLES (UNCHANGED) --- */
+.auth-form h2 {
+    margin-bottom: 25px;
+    color: #333;
+    font-size: 2rem;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: #f7f7f7;
+    font-size: 1rem;
+    box-sizing: border-box;
+    color: #333;
+}
+
+.auth-form input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+.auth-button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(to right, #ffffff, #e6e6e6);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    color: #333;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.auth-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.switch-form {
+    margin-top: 20px;
+    color: #555;
+}
+
+.switch-form span {
+    color: #2563eb;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.error-message {
+    color: #d9534f;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
