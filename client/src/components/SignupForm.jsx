@@ -15,7 +15,7 @@ const SignupForm = ({ onSwitch }) => {
             return;
         }
         try {
-            const { data } = await axios.post('http://localhost:5000/api/users/register', { username, email, password });
+            const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/api/users/register`, { email, password });
             console.log('Registration successful:', data);
              // Automatically switch to login form after successful registration
             onSwitch();

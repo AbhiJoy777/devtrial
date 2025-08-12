@@ -13,7 +13,8 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, { 
     cors: { 
-        origin: process.env.FRONTEND_URL, // Use the variable
+        // Split the string into an array of allowed origins
+        origin: process.env.FRONTEND_URL.split(','), 
         methods: ["GET", "POST"] 
     } 
 });

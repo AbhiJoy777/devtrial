@@ -67,7 +67,7 @@ const DashboardPage = () => {
           myVideoRef.current.srcObject = stream;
         }
 
-        socket = io('http://localhost:5000');
+       socket = io(import.meta.env.VITE_API_URL);
         socketRef.current = socket;
 
         const peer = new Peer({ initiator: false, stream, trickle: false });
